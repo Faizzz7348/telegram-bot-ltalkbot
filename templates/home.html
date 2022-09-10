@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gundam</title>
+
+    <!-- font awesome cdn link -->
+    <link rel=stylesheet href="https://cdn.js.cloudfare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+<h3>Messages - Page {{ page }}</h3>
+<ul>
+ {% for msg in messages %}
+ <li>{{ msg | escape }}</li>
+ {% endfor %}
+</ul>
+	
+{% if prev_page %}<a href='/{{ prev_page }}'>Previous Page</a>{% endif %}
+{% if prev_page and next_page %}|{% endif%}
+{% if next_page %}<a href='/{{ next_page }}'>Next Page</a>{% endif %}
+
+	</body>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+body {
+	font-family: 'Bree Serif', serif;
+	margin-top: 20px;
+	padding-left: 2px;
+}
+	
+</style>
